@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> AGHS | Patients Dashboard </title>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="../assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="../assets/css/animate.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="../assets/img/profile_small.jpg"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">Michael Gobz</span>
+                            <span class="text-muted text-xs block">Lead Patient<b class="caret"></b></span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        AGHS
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="dashboard.ejs"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="/dashboard">Patients Dashboard</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Invoices</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/invoices">All invoices</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to AGHS Patients Portal.</span>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="wrapper wrapper-content">
+        <div class="row">
+                    <div class="col-lg-3">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>Appointments</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">14</h1>
+                                <small>Successful</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>Paid Invoices</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">21</h1>
+                                <small>Paid</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>Pending Invoices</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">4</h1>
+                                <small>Should be paid</small>
+                            </div>
+                        </div>
+                    </div>
+            <div class="col-lg-3">
+                <div class="widget style1">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <a href="/book_appointment"><i class="fa fa-plus fa-5x text-navy"></i></a>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span> Book Appointment </span>
+                            <h2 class="font-bold">Book</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5> Appointment History </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Patient_ID</th>
+                                            <th>Appointment Details</th>
+                                            <th>Name</th>
+                                            <th>Phone </th>
+                                            <th>Department</th>
+                                            <th>Doctor</th>
+                                            <th>Time</th>
+                                            <th>Data</th>
+                                            <th>View Details</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Coughing and asthma</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 051213</td>
+                                            <td>Out Patient (OP)</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>8:00</td>
+                                            <td>Jul 14, 2013</td>
+                                            <td><a href="/appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Malaria and Diarrhoea</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0500 780909</td>
+                                            <td>Out Patient (OP)</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>10:00</td>
+                                            <td>Jul 16, 2013</td>
+                                            <td><a href="/appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Iris scanning and drops</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 1111</td>
+                                            <td>Eye Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Sarah</span></td>
+                                            <td>8:00</td>
+                                            <td>Jul 18, 2013</td>
+                                            <td><a href="/appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Stomach arch and head arch</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>(016977) 0648</td>
+                                            <td>Internal medicine</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>11:00</td>
+                                            <td>Jul 22, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Dysentery</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0500 780909</td>
+                                            <td>Out patient (OP)</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>12:00</td>
+                                            <td>Jul 16, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Dysentery</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 051213</td>
+                                            <td> Out Patient</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>2:00</td>
+                                            <td>Jul 14, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Eye CHeck up</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>(016977) 0648</td>
+                                            <td>Eye Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>8:00</td>
+                                            <td>Jul 22, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Dysentery<small>This is example of project</small></td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 051213</td>
+                                            <td>Out patent (OP)</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>9:00</td>
+                                            <td>Jul 14, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Antinetal Care</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0500 780909</td>
+                                            <td>Women Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>10:00</td>
+                                            <td>feb 16, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Cramps</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 1111</td>
+                                            <td>Women Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>9:00</td>
+                                            <td>feb 10, 2013</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Immunisation for Cervical cancer</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>(016977) 0648</td>
+                                            <td>Women Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>9:00</td>
+                                            <td>feb 10, 2012</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Virginal Examination</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0500 780909</td>
+                                            <td>Women Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Mukula</span></td>
+                                            <td>2:00</td>
+                                            <td>feb 1, 2012</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Full Body check up</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>0800 051213</td>
+                                            <td>Internal Medicine</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>9:00</td>
+                                            <td>Jul 14, 2011</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGHS-19-1202</td>
+                                            <td>Sex education and Family planning Education</td>
+                                            <td>Sarah Jackson Akampurira</td>
+                                            <td>(016977) 0648</td>
+                                            <td>Women Clinic</td>
+                                            <td><i class="fa fa-user-md fa-2x text-navy"></i><span style="padding-left: 10px;">Dr. Muwanguzi</span></td>
+                                            <td>11:00</td>
+                                            <td>Jul 1, 2011</td>
+                                            <td><a href="appointment_details"><span style="padding-right:10px;">view</span><i class="fa fa-info text-navy"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        <div class="footer">
+            <div class="float-right">
+                <strong>Copyright</strong> AGHS &copy; 2020
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="../assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../assets/js/inspinia.js"></script>
+    <script src="../assets/js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="../assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('Welcome to AGHS ', 'Patients Portal');
+
+            }, 1300);
+        });
+    </script>
+</body>
+</html>

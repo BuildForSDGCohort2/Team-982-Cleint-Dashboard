@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AGHS | Invoice</title>
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../assets/css/animate.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="../assets/img/profile_small.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">Michael Gobz</span>
+                                <span class="text-muted text-xs block">Lead Patient<b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            AGHS
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/">Patients Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Invoices</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/invoices">All invoices</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to AGHS Patients Portal.</span>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-8">
+                    <h2>Invoice</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">
+                            <strong>Invoice</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-4">
+                    <div class="title-action">
+                        <a href="/invoices/single-invoice/print" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Print Invoice </a>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="wrapper wrapper-content animated fadeInRight">
+                    <div class="ibox-content p-xl">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5>From:</h5>
+                                    <address>
+                                        <strong>Eye Clinic</strong><br>
+                                        Mengo Hospital block 23<br>
+                                        Kampala Uganda <br>
+                                        <abbr title="Phone">P:</abbr> (256) 414 2345
+                                    </address>
+                                </div>
+
+                                <div class="col-sm-6 text-right">
+                                    <h4>Invoice No.</h4>
+                                    <h4 class="text-navy">AGHS-INV-000567F7-00</h4>
+                                    <span>To:</span>
+                                    <address>
+                                        <strong>AGHS-19-2050</strong><br>
+                                        Sarah Jackson Akampurira<br>
+                                        Kabale Rest Apartments<br>
+                                        <abbr title="Phone">P:</abbr> (256) 7783 4580
+                                    </address>
+                                    <p>
+                                        <span><strong>Invoice Date:</strong> March 18, 2014</span><br/>
+                                        <span><strong>Due Date:</strong> April 18, 2014  </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive m-t">
+                                <table class="table invoice-table">
+                                    <thead>
+                                    <tr>
+                                        <th>Particulars List</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Payment Method</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><div><strong>Consultation</strong></div>
+                                            <small>By DR Sarah eye clinic</small></td>
+                                        <td>1</td>
+                                        <td>10000</td>
+                                        <td>Cash</td>
+                                        <td>10000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div><strong>Eye Cream</strong></div>
+                                            <small>Cream to put in the eyes for 14 days
+                                            </small></td>
+                                        <td>1</td>
+                                        <td>20000</td>
+                                        <td>Cash</td>
+                                        <td>20000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div><strong>Eye Drops</strong></div>
+                                            <small>To use for a month</small></td>
+                                        <td>2</td>
+                                        <td>20000</td>
+                                        <td>Cash</td>
+                                        <td>40000</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div><!-- /table-responsive -->
+
+                            <table class="table invoice-total">
+                                <tbody>
+                                <tr>
+                                    <td><strong>Sub Total :</strong></td>
+                                    <td>70000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL :</strong></td>
+                                    <td>70000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"><i class="fa fa-dollar"></i> Make A Payment</button>
+                            </div>
+                        <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated flipInY">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">Make Payments</h4>
+                                        <small class="font-bold">Make payments through the mobile money or direct to Hospital cashier</small>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>For Mobile money </strong>
+                                            continue with mobile money by accepting the transaction below
+                                            (feature not fully implemented)
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Accept Transaction</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="well m-t"><strong>Comments</strong>
+                                ::: _______________________________________
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="float-right">
+                <strong>Copyright</strong> AGHS &copy; 2020
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+    <!-- Mainly scripts -->
+    <script src="../assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../assets/js/inspinia.js"></script>
+    <script src="../assets/js/plugins/pace/pace.min.js"></script>
+
+<script>
+
+</script>
+
+
+</body>
+
+</html>
