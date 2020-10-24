@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
 
 const port = process.env.PORT || 3000
@@ -17,12 +16,12 @@ app.get('/404',(req ,res) => {
     }
 );
 
-app.get('/',(req ,res) => {
-    res.render('register')
-    }
-);
+app.get('/', (req, res) => {
+   res.render('register');
+});
+
 app.get('/dashboard',(req ,res) => {
-        res.render('dashboard')
+        res.render('dashboard');
     }
 );
 

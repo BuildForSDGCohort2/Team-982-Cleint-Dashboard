@@ -13,6 +13,8 @@
     <link href="../assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="../assets/css/animate.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="../assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 
 </head>
 
@@ -27,9 +29,12 @@
             </div>
             <h3>Register to AGHS</h3>
             <p>Create account an Account </p>
-            <form class="m-t" role="form" action="/login">
+            <form class="m-t" role="form" action="/">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" required="">
+                    <input type="text" class="form-control" placeholder="First Name" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last Name" required="">
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" required="">
@@ -38,9 +43,15 @@
                     <input type="password" class="form-control" placeholder="Password" required="">
                 </div>
                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Tel-Phone" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Address" required="">
+                </div>
+                <div class="form-group">
                         <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+                <button type="submit" class="btn btn-primary block full-width m-b demo3">Register</button>
 
                 <p class="text-muted text-center"><small>Already have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" href="/login">Login</a>
@@ -55,11 +66,27 @@
     <script src="../assets/js/bootstrap.js"></script>
     <!-- iCheck -->
     <script src="../assets/js/plugins/iCheck/icheck.min.js"></script>
+    <!-- Sweet alert -->
+    <script src="../assets/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
         $(document).ready(function(){
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',
+            });
+
+            $('.demo3').click(function () {
+                swal({
+                    title: "Thank you For Registering?",
+                    text: "Now u will be redirected to Dashboard",
+                    type: "Success",
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, revoke it!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Your Appointment has been revoked ", "success");
+                    // we can add some logic to remove it from  the database
+                });
             });
         });
     </script>
